@@ -38,8 +38,18 @@
         div.content {
             margin-left: 25%;
             padding: 1px 16px;
-            height: 1000px;
+            /*height: 1000px;*/
         }
+        div.block {
+		width: 320px;
+		height: 350px;
+		margin: 15px;
+		border: 1px solid #4CAF50;
+        display: inline-block; 
+        text-align: center;
+        /* div的默认的display为block，块级元素，这也是导致div默认竖向排列的原因 */
+	    }
+
         
         @media screen and (max-width: 900px) {
             ul.sidenav {
@@ -70,159 +80,346 @@
         <li><a href="#code2table">code2table</a></li>
         <li><a href="#code2figure">code2figure</a></li>
         <li><a href="#langauge2table">langauge2table</a></li>
+        <li><a href="#langauge2figure">langauge2figure</a></li>
+        <li><a href="#equation">equation generation</a></li>
+        <li><a href="#language2newspaper">langauge2newspaper</a></li>
+        <li><a href="#language2paper">langauge2paper</a></li>
+        <li><a href="#dense_ocr">Dense OCR</a></li>
+        <li><a href="#UI">UI design</a></li>
+        <li><a href="#humanbody">Human Body</a></li>
+        <li><a href="#withmark">Image with Mark</a></li>
     </ul>
 
-    <div class="content">
+        <div class="content">
         <h2 id="intro">Introduction</h2>
+        <p>With the rapid development of diffusion models, a multitude of text-to-image (T2I) models have emerged, such as Imagen, OpenAI's DALL·E 3, the Stable Diffusion series, and Lumina-T2I models, among others. Recently, Black Forest Lab released FLUX.1, and Ideogram 2.0 also made its debut, showcasing exceptional performance. In this article, we delve deeply into the capabilities and performance of FLUX, Ideogram 2.0, and other T2I models to address the following question: Have T2I models entered a new era, and can these breakthroughs lead T2I models toward becoming general-purpose models?
+            <br>
+            Today’s T2I model evaluations often rely on traditional metrics, such as using F1 scores to assess the realism of generated images, or calculating image-text similarity scores to judge the alignment between generated content and prompts. However, as more powerful models emerge, T2I models are no longer limited to traditional image generation tasks. They are beginning to demonstrate their potential in more challenging scenarios, gradually evolving toward the realm of foundation models. In this article, we introduce the T2I-Evaluation platform, where we thoroughly and comprehensively explore both open-source and closed-source T2I models. To evaluate these models scientifically and systematically, we have designed five domains to rigorously assess and compare their capabilities. These domains include Structured Output Generation, Realism and Physical Consistency Tasks, Specific Domain Generation, Challenging Scenario Generation, and Robotics and Simulation Tasks.
+            <br>
+            In this work, we carefully selected six models for comparison, including FLUX, ID2, MidJourney, DALL·E 3, SD3, and Jimeng. These models are all highly mature and widely recognized in the industry, with the recently launched FLUX and ID2 performing exceptionally well on many challenging tasks. These six models encompass both open-source and closed-source models, providing diversity and representativeness.</p>
+    </div>
 
+    <div class="content">
         <h2 id="code2table">code2table</h2>
-    <div>
-        <p>prompt 1<p>
         <img src="images/code2tableQ1.png" style="height: 200px;">
     </div>
-            <br>
-        <div style="float:left;">
+
+
+    <div class="content">
+        <div class="block">
             <p>Flux.1</p>
             <img src="images/code2table1_flux.png" style="height: 280px;">
         </div>
         
-        <div style="float:left;">
+        <div class="block">
             <p>Ideogram2.0</p>
         <img src="images/code2table1_id2.png" style="height: 280px;">
         </div>
 
-        <div style="float:left;">
+        <div class="block">
         <p>DALLE3</p>
         <img src="images/code2table1_d3.png" style="height: 280px;">
         </div>
-
-        <br>
-
-        <div style="float:left;">
+        <div class="block">
             <p>Midjourney</p>
             <img src="images/code2table1_mid.png" style="height: 280px;">
             </div>
 
-        <div style="float:left;">
+        <div class="block">
             <p>Stable Diffusion 3</p>
             <img src="images/code2table1_sd.png" style="height: 280px;">
             </div>
+    </div>
 
         <br>
 
-        <div>
-            <p>prompt 2<p>
-            <img src="images/code2tableQ2.png" style="height: 200px;">
+        <div class="content">
+            <img src="images/code2tableQ2.png" style="height: 400px;">
         </div>
-                <br>
-                <p>Results</p>
-                <br>
-            <div style="float:left;">
+    
+    
+        <div class="content">
+            <div class="block">
                 <p>Flux.1</p>
                 <img src="images/code2table2_flux.png" style="height: 280px;">
             </div>
             
-            <div style="float:left;">
+            <div class="block">
                 <p>Ideogram2.0</p>
             <img src="images/code2table2_id2.png" style="height: 280px;">
             </div>
     
-            <div style="float:left;">
+            <div class="block">
             <p>DALLE3</p>
             <img src="images/code2table2_d3.png" style="height: 280px;">
             </div>
-    
-            <br>
-
-            <div style="float:left;">
+            <div class="block">
                 <p>Midjourney</p>
                 <img src="images/code2table2_mid.png" style="height: 280px;">
                 </div>
     
-            <div style="float:left;">
+            <div class="block">
                 <p>Stable Diffusion 3</p>
                 <img src="images/code2table2_sd.png" style="height: 280px;">
                 </div>
+        </div>
         
 <!----------------------------------------------------------------------------------------------------->
+        <div class="content">
+        <h2 id="code2figure">code2figure</h2>
+        <img src="images/c2f/code2figQ1.png" style="height: 200px;">
+    </div>
+
+
+    <div class="content">
+        <div class="block">
+            <p>Flux.1</p>
+            <img src="images/c2f/code2fig1_flux.png" style="height: 280px;">
+        </div>
+        
+        <div class="block">
+            <p>Ideogram2.0</p>
+        <img src="images/c2f/code2fig1_id2.png" style="height: 280px;">
+        </div>
+
+        <div class="block">
+        <p>DALLE3</p>
+        <img src="images/c2f/code2fig1_d3.png" style="height: 280px;">
+        </div>
+        <div class="block">
+            <p>Midjourney</p>
+            <img src="images/c2f/code2fig1_mid.png" style="height: 280px;">
+            </div>
+
+        <div class="block">
+            <p>Stable Diffusion 3</p>
+            <img src="images/c2f/code2fig1_sd.png" style="height: 280px;">
+            </div>
+        <div class="block">
+            <p>Jimeng</p>
+            <img src="images/c2f/code2fig1_jm.png" style="height: 280px;">
+            </div>
+    </div>
+
         <br>
-        <h2 id="code2figure">code2figuee</h2>
-        <div>
-        <p>prompt 1</p>
-            <img src="images/c2f/code2figQ1.png" style="height: 200px;">
+
+        <div class="content">
+            <img src="images/code2tableQ2.png" style="height: 400px;">
         </div>
-                <br>
-            <div style="float:left;">
-                <p>Flux.1</p>
-                <img src="images/c2f/code2fig1_flux.png" style="height: 280px;">
-            </div>
-            
-            <div style="float:left;">
-                <p>Ideogram2.0</p>
-            <img src="images/c2f/code2fig1_id2.png" style="height: 280px;">
-            </div>
     
-            <div style="float:left;">
-            <p>DALLE3</p>
-            <img src="images/c2f/code2fig1_d3.png" style="height: 280px;">
-            </div>
     
-            <br>
-    
-            <div style="float:left;">
-                <p>Midjourney</p>
-                <img src="images/c2f/code2fig1_mid.png" style="height: 280px;">
-                </div>
-    
-            <div style="float:left;">
-                <p>Stable Diffusion 3</p>
-                <img src="images/c2f/code2fig1_sd.png" style="height: 280px;">
-                </div>
-    
-                <div style="float:left;">
-                    <p>Jimeng</p>
-                    <img src="images/c2f/code2fig1_jm.png" style="height: 280px;">
-                    </div>
-            
-            <br>
-        <div>
-            <p>prompt 2</p>
-            <img src="images/c2f/code2figQ2.png" style="height: 200px;">
-        </div>
-                <br>
-            <div style="float:left;">
+        <div class="content">
+            <div class="block">
                 <p>Flux.1</p>
                 <img src="images/c2f/code2fig2_flux.png" style="height: 280px;">
             </div>
             
-            <div style="float:left;">
+            <div class="block">
                 <p>Ideogram2.0</p>
             <img src="images/c2f/code2fig2_id2.png" style="height: 280px;">
             </div>
     
-            <div style="float:left;">
+            <div class="block">
             <p>DALLE3</p>
             <img src="images/c2f/code2fig2_d3.png" style="height: 280px;">
             </div>
-    
-            <br>
-    
-            <div style="float:left;">
+            <div class="block">
                 <p>Midjourney</p>
                 <img src="images/c2f/code2fig2_mid.png" style="height: 280px;">
                 </div>
     
-            <div style="float:left;">
+            <div class="block">
                 <p>Stable Diffusion 3</p>
                 <img src="images/c2f/code2fig2_sd.png" style="height: 280px;">
                 </div>
-    
-                <div style="float:left;">
-                    <p>Jimeng</p>
-                    <img src="images/c2f/code2fig2_jm.png" style="height: 280px;">
-                    </div>
+            <div class="block">
+                <p>Jimeng</p>
+                <img src="images/c2f/code2fig2_jm.png" style="height: 280px;">
+                </div>
+        </div>
+<!----------------------------------------------------------------------------------------------------->
+<div class="content">
+    <h2 id="langauge2table">language2table</h2>
+    <p>
+        The table has two columns and six rows. The first row contains the headers: "Name" and "Occupation" The subsequent rows contain data for five individuals.<br>
+In the second row, in the first cell:"Alice", and in the second cell:"Engineer".<br>
+In the third row, in the first cell:"Bob", and in the second cell:"Designer".<br>
+In the fourth row, in the first cell:"Charlie", and in the second cell:"Teacher".<br>
+In the fifth row, in the first cell:"Emy", and in the second cell:"Student".<br>
+In the sixth row, in the first cell:"Jolin", and in the second cell:"Dancer".<br>
+Each cell in the table contains text that is aligned to the left. The table has simple borders separating the rows and columns.<br>
+    </p>
+</div>
 
+
+<div class="content">
+    <div class="block">
+        <p>Flux.1</p>
+        <img src="images/l2t/l2t1_flux.png" style="height: 280px;">
     </div>
+    
+    <div class="block">
+        <p>Ideogram2.0</p>
+    <img src="images/l2t/l2t1_id2.png" style="height: 280px;">
+    </div>
+
+    <div class="block">
+    <p>DALLE3</p>
+    <img src="images/l2t/l2t1_d3.png" style="height: 280px;">
+    </div>
+    <div class="block">
+        <p>Midjourney</p>
+        <img src="images/l2t/l2t1_mid.png" style="height: 280px;">
+        </div>
+
+    <div class="block">
+        <p>Stable Diffusion 3</p>
+        <img src="images/l2t/l2t1_sd.png" style="height: 280px;">
+        </div>
+    <div class="block">
+        <p>Jimeng</p>
+        <img src="images/l2t/l2t1_jm.png" style="height: 280px;">
+        </div>
+</div>
+
+    <br>
+
+    <div class="content">
+        <p>
+The table has three columns and six rows. <br>
+The first row contains the headers: "Name","Age", "Occupation" The subsequent rows contain data for five individuals.<br>
+**First row**: Contains the headers: "Name," "Occupation," and "Age."<br>
+**Second row**: in the first cell:"Alice," in the second cell:"Engineer," and in the third cell:"30."<br>
+**Third row**: in the first cell:"Bob", in the second cell:"Designer," and in the third cell:"28."<br>
+**Fourth row**: in the first cell:"Charlie", in the second cell:"Teacher," and in the third cell:"35."<br>
+**Fifth row**: in the first cell:"Emy", in the second cell:"Student," and in the third cell:"22."<br>
+**Sixth row**: in the first cell:"Jolin", in the second cell:"Dancer," and in the third cell:"26."<br>
+Each cell in the table contains text that is aligned to the left, with simple borders separating the rows and columns.<br>
+        </p>
+    </div>
+
+
+    <div class="content">
+        <div class="block">
+            <p>Flux.1</p>
+            <img src="images/l2t/l2t2_flux.png" style="height: 280px;">
+        </div>
+        
+        <div class="block">
+            <p>Ideogram2.0</p>
+        <img src="images/l2t/l2t2_id2.png" style="height: 280px;">
+        </div>
+    
+        <div class="block">
+        <p>DALLE3</p>
+        <img src="images/l2t/l2t2_d3.png" style="height: 280px;">
+        </div>
+        <div class="block">
+            <p>Midjourney</p>
+            <img src="images/l2t/l2t2_mid.png" style="height: 280px;">
+            </div>
+    
+        <div class="block">
+            <p>Stable Diffusion 3</p>
+            <img src="images/l2t/l2t2_sd.png" style="height: 280px;">
+            </div>
+        <div class="block">
+            <p>Jimeng</p>
+            <img src="images/l2t/l2t2_jm.png" style="height: 280px;">
+            </div>
+    </div>
+<!----------------------------------------------------------------------------------------------------->
+<div class="content">
+    <h2 id="langauge2figure">language2figure</h2>
+    <p>
+        This bar chart is titled "Number of Fruits" and compares the quantities of different types of fruits. <br>
+        The x-axis, labeled "Fruit," lists five types of fruits: Apple, Banana, Watermelon, Lemon, and Orange. <br>
+        The y-axis, labeled "Number," represents the quantity of each fruit. The heights of the bars correspond to the number of each fruit: <br>
+        Apple: 10<br>
+        Banana: 20<br>
+        Watermelon: 30<br>
+        Lemon: 40<br>
+        Orange: 50<br>
+        The chart visually shows that Lemon has the highest quantity at 48, while Apple has the lowest at 10.<br>
+    </p>
+</div>
+
+
+<div class="content">
+    <div class="block">
+        <p>Flux.1</p>
+        <img src="images/l2f/l2f1_flux.PNG" style="height: 280px;">
+    </div>
+    
+    <div class="block">
+        <p>Ideogram2.0</p>
+    <img src="images/l2f/l2f1_id2.PNG" style="height: 280px;">
+    </div>
+
+    <div class="block">
+    <p>DALLE3</p>
+    <img src="images/l2f/l2f1_d3.PNG" style="height: 280px;">
+    </div>
+    <div class="block">
+        <p>Midjourney</p>
+        <img src="images/l2f/l2f1_mid.PNG" style="height: 280px;">
+        </div>
+
+    <div class="block">
+        <p>Stable Diffusion 3</p>
+        <img src="images/l2f/l2f1_sd.PNG" style="height: 280px;">
+        </div>
+    <div class="block">
+        <p>Jimeng</p>
+        <img src="images/l2f/l2f1_jm.PNG" style="height: 280px;">
+        </div>
+</div>
+
+    <br>
+
+    <div class="content">
+        <p>
+            The pie chart is a circle divided into four slices, each representing a different portion.<br>
+            The first slice is red and takes up 50% of the pie.<br>
+            The second slice is blue and takes up 30% of the pie.<br>
+            The third slice is green and takes up 10% of the pie.<br>
+            The fourth slice is yellow and takes up 10% of the pie.<br>
+            Each slice has a label inside or next to it, showing its percentage. <br>
+            The colors help to easily identify each section, and the pie chart gives a clear visual representation of how the portions compare to each other.<br>
+        </p>
+    </div>
+
+
+    <div class="content">
+        <div class="block">
+            <p>Flux.1</p>
+            <img src="images/l2f/l2f2_flux.PNG" style="height: 280px;">
+        </div>
+        
+        <div class="block">
+            <p>Ideogram2.0</p>
+        <img src="images/l2f/l2f2_id2.PNG" style="height: 280px;">
+        </div>
+    
+        <div class="block">
+        <p>DALLE3</p>
+        <img src="images/l2f/l2f2_d3.PNG" style="height: 280px;">
+        </div>
+        <div class="block">
+            <p>Midjourney</p>
+            <img src="images/l2f/l2f2_mid.PNG" style="height: 280px;">
+            </div>
+    
+        <div class="block">
+            <p>Stable Diffusion 3</p>
+            <img src="images/l2f/l2f2_sd.PNG" style="height: 280px;">
+            </div>
+        <div class="block">
+            <p>Jimeng</p>
+            <img src="images/l2f/l2f2_jm.PNG" style="height: 280px;">
+            </div>
+    </div>
+    
 
 </body>
 
