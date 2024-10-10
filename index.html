@@ -26,7 +26,7 @@
         }
          
         ul.sidenav li a.active {
-            background-color: #4CAF50;
+            background-color: #8f1414;
             color: white;
         }
         
@@ -70,6 +70,58 @@
                 float: none;
             }
         }
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        .faq {
+            color: #ffe3e3;
+            margin-bottom: 3rem;
+            }
+
+            .faq-label {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            background: #c77474;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            }
+
+
+            .faq-label::after {
+            content: '\002B';
+            padding: 0.51rem;
+            transform: scale(1.8);
+            text-align: center;
+            transition: all 0.35s;
+            }
+
+            .faq-content {
+            max-height: 0;
+            padding: 0 1em;
+            color: #2c3e50;
+            background: #f1f1f1;
+            transition: all 0.35s;
+            display: none;
+            }
+            input:checked + .faq-label {
+            background: #c77474;
+            }
+            input:checked + .faq-label::after {
+            content: '\2013';
+            transform: scale(1.5);
+            }
+            input:checked ~ .faq-content {
+            max-height: 100vh;
+            padding: 1em;
+            display: block;
+            transition: all 0.35s;
+            }
     </style>
 </head>
 
@@ -78,16 +130,78 @@
     <ul class="sidenav">
         <li><a class="active" href="#intro">Introduction</a></li>
         <li><a href="#code2table">code2table</a></li>
-        <li><a href="#code2figure">code2figure</a></li>
+        
         <li><a href="#langauge2table">langauge2table</a></li>
         <li><a href="#langauge2figure">langauge2figure</a></li>
-        <li><a href="#equation">equation generation</a></li>
-        <li><a href="#language2newspaper">langauge2newspaper</a></li>
-        <li><a href="#language2paper">langauge2paper</a></li>
+
         <li><a href="#dense_ocr">Dense OCR</a></li>
-        <li><a href="#UI">UI design</a></li>
+        
         <li><a href="#humanbody">Human Body</a></li>
         <li><a href="#withmark">Image with Mark</a></li>
+
+        <div class="faq-box"></div>
+            <div class="faq">
+            <input type="checkbox" id="faq1">
+            <label class="faq-label" for="faq1"> 1. Structured Output Generation</label>
+            <div class="faq-content">
+                <li><a href="#code2table">code2table</a></li>
+                <li><a href="#langauge2table">langauge2table</a></li>
+                <li><a href="#code2figure">code2figure</a></li>
+                <li><a href="#langauge2figure">langauge2figure</a></li>
+                <li><a href="#equation">equation generation</a></li>
+                <li><a href="#language2newspaper">langauge2newspaper</a></li>
+                <li><a href="#language2paper">langauge2paper</a></li>
+                <li><a href="#json2image">json2image</a></li>
+                <li><a href="#UI">UI design</a></li>
+                <li><a href="#codegen">code generation</a></li>
+            </div>
+            </div>
+            <div class="faq">
+            <input type="checkbox" id="faq2">
+            <label class="faq-label" for="faq2"> 2. Realism and Physical Consistency Tasks</label>
+            <div class="faq-content">
+                <li><a href="#multiperson">multi person</a></li>
+                <li><a href="#humanbody">human body</a></li>
+                <li><a href="#photo">photographic image generation</a></li>
+                <li><a href="#perspective">perspective relation</a></li>
+                <li><a href="#physicalund">pysical understanding</a></li>
+            </div>
+            </div>
+            <div class="faq">
+                <input type="checkbox" id="faq3">
+                <label class="faq-label" for="faq3"> 3. Specific Domain Generation</label>
+                <div class="faq-content">
+                    <li><a href="#math">math</a></li>
+                    <li><a href="#fractal">fractal</a></li>
+                    <li><a href="#medical">medical</a></li>
+                    <li><a href="#pointcloud">3D point cloud</a></li>
+                    <li><a href="#mesh">3D mesh</a></li>
+                    <li><a href="#chemisty">chemisty</a></li>
+                    <li><a href="#biology">biology</a></li>
+                    <li><a href="#robotics">robotics ans simuulation tasks</a></li>
+                    <li><a href="#autodriving">autonomous driving</a></li>
+                </div>
+                </div>
+                <div class="faq">
+                <input type="checkbox" id="faq4">
+                <label class="faq-label" for="faq3"> 4. Challenging Scenario Generation</label>
+                <div class="faq-content">
+                    <li><a href="#withmark">image with mark</a></li>
+                    <li><a href="#fractal">set of markl</a></li>
+                    <li><a href="#dense_ocr">dense OCR</a></li>
+                    <li><a href="#multil">multilingual</a></li>
+                    <li><a href="#emoji">emoji</a></li>
+                    <li><a href="#irrational scene">irrational scene</a></li>
+                    <li><a href="#LLMQA">LLM QA</a></li>
+                    <li><a href="#matermark">watermark</a></li>
+                    <li><a href="#lowquality">low quality</a></li>
+                    <li><a href="#textwriting">text writing</a></li>
+                    <li><a href="#multiimage">multi-image</a></li>
+                </div>
+                </div>
+            </div>
+          </ul>
+        
     </ul>
 
         <div class="content">
